@@ -1,20 +1,20 @@
 from turtle import *
 
-# You can change this
+# Draw speed
 speeeeed = 2
 
-# Setings
+# Setings turtle
 speed(100)
 hideturtle()
 pencolor("red")
 pensize(5)
+# Replace turtle
 up()
 goto(-200, 0)
 down()
 
-# 1
+# 1 heartbeat
 speed(speeeeed)
-
 forward(50)
 goto( pos() + (15, 40) )
 goto( pos() + (15,-40) )
@@ -30,7 +30,7 @@ forward(10)
 goto( pos() + (5, 25) )
 forward(25)
 
-# 2
+# 2 heartbeat
 forward(50)
 goto( pos() + (15, 40) )
 goto( pos() + (15,-40) )
