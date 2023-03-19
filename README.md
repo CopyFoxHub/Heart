@@ -1,4 +1,4 @@
 # Heart
-Heart in Python with Turtle Lib
+Heart on Python with Turtle Lib
 
-Do you love bananas?
+It's very useful thing!
