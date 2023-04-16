@@ -1,4 +1,4 @@
-# Heart
-Heart on Python with Turtle Lib
+# Сердце
+Что-то типо валентинки, написанной с помощью библиотеки Turtle
 
-It's very useful thing!
+Очень полезная штука!
