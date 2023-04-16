@@ -1,19 +1,19 @@
 from turtle import *
 
-# Draw speed
+# Скорость анимации (МОЖНО ИЗМЕНЯТЬ)
 speeeeed = 2
 
-# Setings turtle
+# Настройка черепашки
 speed(100)
 hideturtle()
 pencolor("red")
 pensize(5)
-# Replace turtle
+# Стартовая позиция черепашки
 up()
 goto(-200, 0)
 down()
 
-# 1 heartbeat
+# Первый стук сердца
 speed(speeeeed)
 forward(50)
 goto( pos() + (15, 40) )
@@ -30,7 +30,7 @@ forward(10)
 goto( pos() + (5, 25) )
 forward(25)
 
-# 2 heartbeat
+# Второй стук сердца
 forward(50)
 goto( pos() + (15, 40) )
 goto( pos() + (15,-40) )
@@ -45,7 +45,7 @@ goto( pos() + (5, -25))
 forward(60)
 for_me = pos()
 
-# heart
+# Сердце
 pencolor("red")
 speed(3.5)
 goto(-10, -300)
@@ -61,5 +61,5 @@ circle(rad, -180)
 speed(3.5)
 goto(for_me)
 
-# End
+# Завершение работы
 done()
