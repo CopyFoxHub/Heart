@@ -1,65 +1,92 @@
-from turtle import *
+import turtle
 
-# Скорость анимации (МОЖНО ИЗМЕНЯТЬ)
-speeeeed = 2
+# Скорость анимации
+speed = 5
 
-# Настройка черепашки
-speed(100)
-hideturtle()
-pencolor("red")
-pensize(5)
-# Стартовая позиция черепашки
-up()
-goto(-200, 0)
-down()
 
-# Первый стук сердца
-speed(speeeeed)
-forward(50)
-goto( pos() + (15, 40) )
-goto( pos() + (15,-40) )
-forward(10)
-goto( pos() + (5,-15) )
-goto( pos() + (5,15) )
-forward(5)
-goto( pos() + (10, 75) )
-goto( pos() + (10,-150) )
-goto( pos() + (10, 100) )
-goto( pos() + (5, -50))
-forward(10)
-goto( pos() + (5, 25) )
-forward(25)
+def start():
+    """Стартовая позиция и настройка"""
 
-# Второй стук сердца
-forward(50)
-goto( pos() + (15, 40) )
-goto( pos() + (15,-40) )
-forward(10)
-goto( pos() + (5,-15) )
-goto( pos() + (5,15) )
-forward(5)
-goto( pos() + (10, 75) )
-goto( pos() + (10,-150) )
-goto( pos() + (10, 100) )
-goto( pos() + (5, -25))
-forward(60)
-for_me = pos()
+    # Настройка черепашки
+    turtle.speed(1000)
+    turtle.hideturtle()
+    turtle.pencolor("red")
+    turtle.pensize(5)
 
-# Сердце
-pencolor("red")
-speed(3.5)
-goto(-10, -300)
-goto(-200, 0)
-left(120)
-forward(100)
-x = xcor()
-rad = (-10 - x) // 2
-right(30)
-speed(5.5)
-circle(-rad, 180)
-circle(rad, -180)
-speed(3.5)
-goto(for_me)
+    # Стартовая позиция черепашки
+    turtle.up()
+    turtle.goto(-200, 0)
+    turtle.down()
 
-# Завершение работы
-done()
+
+def first_heart_beat():
+    """Первый стук сердца"""
+
+    turtle.forward(50)
+    turtle.goto(turtle.pos() + (15, 40))
+    turtle.goto(turtle.pos() + (15, -40))
+    turtle.forward(10)
+    turtle.goto(turtle.pos() + (5, -15))
+    turtle.goto(turtle.pos() + (5, 15))
+    turtle.forward(5)
+    turtle.goto(turtle.pos() + (10, 75))
+    turtle.goto(turtle.pos() + (10, -150))
+    turtle.goto(turtle.pos() + (10, 100))
+    turtle.goto(turtle.pos() + (5, -50))
+    turtle.forward(10)
+    turtle.goto(turtle.pos() + (5, 25))
+    turtle.forward(25)
+
+
+def second_heart_beat():
+    """Второй стук сердца"""
+
+    turtle.forward(50)
+    turtle.goto(turtle.pos() + (15, 40))
+    turtle.goto(turtle.pos() + (15, -40))
+    turtle.forward(10)
+    turtle.goto(turtle.pos() + (5, -15))
+    turtle.goto(turtle.pos() + (5, 15))
+    turtle.forward(5)
+    turtle.goto(turtle.pos() + (10, 75))
+    turtle.goto(turtle.pos() + (10, -150))
+    turtle.goto(turtle.pos() + (10, 100))
+    turtle.goto(turtle.pos() + (5, -25))
+    turtle.forward(60)
+
+
+def heart(start_pos: tuple, speed: int):
+    """Основа сердца"""
+
+    turtle.pencolor("red")
+    turtle.goto(-10, -300)
+    turtle.goto(-200, 0)
+    turtle.left(120)
+    turtle.forward(100)
+    rad = (-10 - turtle.xcor()) // 2
+    turtle.right(30)
+    turtle.speed(speed * 2)
+    turtle.circle(-rad, 180)
+    turtle.circle(rad, -180)
+    turtle.speed(speed)
+    turtle.goto(start_pos)
+
+
+if __name__ == "__main__":
+    # Запуск черепашки
+    start()
+
+    # Установка скорости
+    turtle.speed(speed=speed)
+
+    # Первый стук
+    first_heart_beat()
+
+    # Второй стук
+    second_heart_beat()
+
+    # Сердце
+    heart(start_pos=turtle.pos(), speed=speed)
+
+    # Завершение программы
+    turtle.done()
